@@ -1,0 +1,12 @@
+@import '~antd/dist/antd.css';
+
+section{
+    margin: 20px auto;
+    width: 60vw;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Input-search{
+    
+}
