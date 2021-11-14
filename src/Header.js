@@ -1,51 +1,56 @@
 import React from "react";
+import "./Header.css";
+import { Button, Input,Avatar} from "antd";
+// import logo from './logo.png';
+// import {Link} from 'react-router-dom';
 import {
-  SearchOutlined,
   HomeOutlined,
   NotificationOutlined,
   MessageOutlined,
-  UserOutlined
+  UserOutlined,
 } from "@ant-design/icons";
-import { Button } from 'antd';
-import { Link } from "react-router-dom";
 
 function Header() {
+  const { Search } = Input;
+  const onSearch = (value) => console.log(value);
+
   return (
-    <div className="main-header">
-      <div className="headerIcons">
+    <div className="header">
+      <div className="home-tab">
         <section>
           <div>
             <HomeOutlined />
             Home
           </div>
-          <div>
+          <div className="notification-tab">
             <NotificationOutlined />
-            Notifications
+            Norifications
           </div>
-          <div>
+          <div className="messages-tab">
             <MessageOutlined />
             Messages
           </div>
-        </section>
-      </div>
-      <div className="logo">
-        <Link to="/">
-          <img src="worldwide-travel-svgrepo-com" alt="app logo" />;
-        </Link>
-      </div>
 
-      <div className="input-field">
-        <input type="text" name="" placeholder="Search Trip gyan">
-          <SearchOutlined />
-        </input>
-        <div className="Avatar">
-          <UserOutlined className="user-prof" src="" />
-        </div>
-        <div className="button-icon">
-         <Button
-         type="primary"
-         data-testid="add-post-button">Add Post</Button>
-        </div>
+          <div className="profile">
+            {/* <Link to="/">
+        <img src="https://www.freepik.com/free-vector/destination-concept-international-travel-journey-red-pointer-with-grey-world-map-inside_10817176.htm#page=1&query=location%20logo&from_query=location%20logo%20png&position=2&from_view=search" alt="App logo">Trip Gyan</img>
+      </Link>   */}
+          </div>
+          <div className="Input-search">
+            <Search
+              placeholder="Search Tripgyan"
+              allowClear
+              onSearch={Search}
+              style={{ width: 270 }}
+            />
+          </div>
+          <div className="Avatar">
+          <Avatar icon={<UserOutlined />} />
+          </div>
+          <div>
+            <Button type="primary" style={{background:"red"}}>Add Post</Button>
+          </div>
+        </section>
       </div>
     </div>
   );
