@@ -3,6 +3,7 @@ import "./Header.css";
 import { Button, Input, Avatar, Layout } from "antd";
 // import logo from './logo.png';
 // import {Link} from 'react-router-dom';
+// import PostFeed from './PostFeed';
 import {
   HomeOutlined,
   NotificationOutlined,
@@ -37,6 +38,7 @@ function Header() {
           </Button>
         </Header>
       </Layout>
+     
     </div>
   );
 }

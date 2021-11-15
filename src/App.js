@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header'; 
+import PostFeed from './PostFeed';
 
 
 
@@ -8,9 +9,9 @@ function App() {
     <div>
     
       <Header />
-      
+      <PostFeed />
     </div>
   )
 }
 
-export default App
+export default App;
