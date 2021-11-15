@@ -1,0 +1,13 @@
+@import "~antd/dist/antd.css";
+.postFeed {
+
+  position: relative;
+  top: 15px;
+  margin-left: 30%;
+  width: 25%;
+  height: 45vh;
+  border-bottom: 1px solid #eff2f5;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+}
