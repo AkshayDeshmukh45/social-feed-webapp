@@ -1,15 +1,27 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
-Header{
-    margin: 20px auto;
-    width: 60vw;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    position: center;
-    top: 0;
+Header {
+  margin: 10px auto;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: center;
+  top: 0;
 }
-.Input-search{
-display: flex;
-justify-content: center;
+.Input-search {
+  display: flex;
+  justify-content: center;
+}
+
+Logo {
+  background-image: url(./logo.png);
+}
+
+.header-logo {
+  position: relative;
+  bottom: 0px;
+  display: block;
+  align-items: baseline;
+  justify-content: center;
 }

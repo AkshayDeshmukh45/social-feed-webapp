@@ -26,15 +26,12 @@ function PostFeed() {
         </Form>
       </Card>
       {handleSubmit}
-      {Posts.map((post) => {
-        return (
-          <div>
-            <Post />
-            <Post />
-            <Post />
-          </div>
-        );
-      })}
+      <div>
+        <Post
+          message="Looking forward to 2022!"
+          timestamp="This is timestamp"
+        />
+      </div>
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import "./Header.css";
-import { Button, Input, Avatar, Layout } from "antd";
+import { Button, Input, Avatar, Layout} from "antd";
 // import logo from './logo.png';
 // import {Link} from 'react-router-dom';
 // import PostFeed from './PostFeed';
+import Logo from "./logo.png";
+
 import {
   HomeOutlined,
   NotificationOutlined,
@@ -26,6 +28,11 @@ function Header() {
           Notifications
           <MessageOutlined />
           Messages
+          <div className="header-logo">
+           <img src={Logo} height={30} width={20} />
+           Trip Gyan 
+            </div>
+          
           <Search
             placeholder="Search Tripgyan"
             allowClear
@@ -38,7 +45,6 @@ function Header() {
           </Button>
         </Header>
       </Layout>
-     
     </div>
   );
 }
