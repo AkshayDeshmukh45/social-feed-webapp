@@ -1,16 +1,13 @@
 import React from "react";
 import "./Header.css";
-import { Button, Input, Avatar, Layout} from "antd";
-// import logo from './logo.png';
-// import {Link} from 'react-router-dom';
-// import PostFeed from './PostFeed';
+import { Button, Input, Avatar, Layout } from "antd";
 import Logo from "./logo.png";
+import Profile from "./Profile.png";
 
 import {
   HomeOutlined,
   NotificationOutlined,
   MessageOutlined,
-  UserOutlined,
 } from "@ant-design/icons";
 
 function Header() {
@@ -29,17 +26,22 @@ function Header() {
           <MessageOutlined />
           Messages
           <div className="header-logo">
-           <img src={Logo} height={30} width={20} />
-           Trip Gyan 
-            </div>
-          
+            <img src={Logo} height={30} width={20} />
+            Trip Gyan
+          </div>
           <Search
             placeholder="Search Tripgyan"
             allowClear
             onSearch={Search}
             style={{ width: "15vw" }}
           />
-          <Avatar icon={<UserOutlined />} />
+          <Avatar
+            className="rounded"
+            src={Profile}
+            width={40}
+            height={40}
+            layout="fixed"
+          />
           <Button type="primary" style={{ background: "red" }}>
             Add Post
           </Button>

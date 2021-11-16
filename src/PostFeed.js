@@ -1,37 +1,58 @@
 import React from "react";
-import { Input, Card, Avatar, Form } from "antd";
 import "./PostFeed.css";
 import { useState } from "react";
-import Post from "./Post";
-import { UserOutlined } from "@ant-design/icons";
-import Posts from "./Posts.json";
+import { moment, time, Date } from "moment";
+import { Avatar } from "antd";
+// import { UserOutlined } from "@ant-design/icons";
 
 function PostFeed() {
-  const [input, setInput] = useState("");
+  const [post, setPost] = useState([
+    {
+      avatar: "../assets/Useprofile.png",
+      name: "Kate_Martin",
+      time: "June 17",
+      status:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis metus et dui molestie, sit amet euismod nunc finibus. Nam dignissim neque lectus.!",
+      postImg: "https://pixabay.com/images/id-155554/",
+    },
+    // {
+    //   avatar: "../assets/Useprofile2.png",
+    //   name: "Ellipsy_Martin",
+    //   time: "June 18",
+    //   status: "Looking_towards!!",
+    //   postImg: "https://pixabay.com/images/id-1556177/",
+    // },
+  ]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
   return (
-    <div>
-      <Card className="postCard">
-        <Avatar icon={<UserOutlined />} />
-        <Form>
-          <Input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="What's happening"
-            className="inputArea"
-          />
-        </Form>
-      </Card>
-      {handleSubmit}
-      <div>
-        <Post
-          message="Looking forward to 2022!"
-          timestamp="This is timestamp"
-        />
-      </div>
+    <div className="container">
+      {post.map((user) => {
+        return (
+          <div className="userPost">
+            <div className="prof">
+              <div className="profile">
+                <Avatar
+                  className="rounded"
+                  src={post.avatar}
+                  width={50}
+                  height={50}
+                  layout="fixed"
+                />
+              </div>
+              <div className="userName">{user.name}</div>
+            </div>
+            <div className="sts">
+              <div className="created-time">{user.time}</div>
+              <div className="picture">
+                <div className="userStatus">{user.status}</div>
+              </div>
+              <div className="userPost">
+                <img src={user.postImg} alt="user2" />
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
