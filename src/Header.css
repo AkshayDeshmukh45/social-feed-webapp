@@ -2,16 +2,11 @@
 
 Header {
   margin: 10px auto;
-  width: 80vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: center;
-  top: 0;
-}
-.Input-search {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 Logo {
@@ -19,9 +14,28 @@ Logo {
 }
 
 .header-logo {
-  position: relative;
-  bottom: 0px;
-  display: block;
-  align-items: baseline;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
   justify-content: center;
+
+}
+.header-widgets {
+  margin: 10px auto;
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.addpost-section{
+  width: 35vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name{
+  margin: 10px 15px;
+  font-size: 1rem;
+  font-family: Ubuntu;
 }

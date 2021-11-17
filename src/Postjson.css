@@ -1,19 +1,20 @@
 @import "~antd/dist/antd.css";
 
 .container {
-  width: 30%;
+  width: 30vw;
   background-color: #f0f2f5;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-left: 30vw;
   height: 50vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   position: absolute;
   top: 35%;
+  text-align: start;
+  display: block;
 }
 
 .profile {
-  margin-left: 10px;
   border-radius: 50px;
   overflow: hidden;
   position: relative;
@@ -21,6 +22,8 @@
 }
 .userPost {
   margin-left: 10px;
+  display: flex;
+  align-items: block;
   width: 250px;
   height: 150px;
   object-fit: cover !important;
@@ -31,7 +34,6 @@
   margin-left: 4vw;
   font-size: 16px;
   font-weight: bold;
-  text-align: "left";
 }
 .prof {
   display: flex;
@@ -46,8 +48,7 @@
   top: 35px;
 }
 .created-time {
-  display: inline;
-  justify-content: inline;
+  margin: 10px 20px;
   margin-left: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -57,6 +58,4 @@
 .userStatus {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-align: "left";
-  font-size: small;
 }

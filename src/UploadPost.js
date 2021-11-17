@@ -12,7 +12,7 @@ function UploadPost() {
     <div className="main-container">
       <Card className="postCard">
         <Avatar
-            className="rounded"
+            className="userProf1"
             src={Profile}
             width={50}
             height={50}
@@ -25,6 +25,7 @@ function UploadPost() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="What's happening"
             className="inputArea"
+            style={{ textAlign: "left" }}
           />
         </Form>
       </Card>

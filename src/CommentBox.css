@@ -1,0 +1,10 @@
+
+.commentbox{
+width: 30%;
+margin-left: 33vw;
+display: flex;
+justify-content: baseline;
+position: relative;
+top: 65px;
+}
+

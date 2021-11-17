@@ -1,13 +1,21 @@
 import React, { createElement, useState } from "react";
-import { Comment, Avatar, Tooltip } from "antd";
+import { Button,Comment, Avatar, Tooltip } from "antd";
 import { HeartOutlined, CommentOutlined } from "@ant-design/icons";
-import './CommentWidgets'
+import "./CommentWidgets";
 
- function CommentWidgets() {
+function CommentWidgets() {
   return (
-    <div className="reactIcon">
-      <HeartOutlined  />
-      <CommentOutlined style={{ marginLeft: "1.5rem" }} />
+    <div style={{
+          width: "5%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          position: "relative",
+          left: "33vw",
+          top: "10rem",
+        }}>
+      <Button><HeartOutlined/></Button>
+      <Button><CommentOutlined /></Button>
     </div>
   );
 }

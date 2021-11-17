@@ -2,8 +2,10 @@ import React from "react";
 import "./PostFeed.css";
 import { useState } from "react";
 import { moment, time, Date } from "moment";
-import { Avatar } from "antd";
+import { Avatar, Layout } from "antd";
 // import { UserOutlined } from "@ant-design/icons";
+import Profile from "./Profile.png";
+import Posts from "./Posts.json";
 
 function PostFeed() {
   const [post, setPost] = useState([
@@ -11,21 +13,20 @@ function PostFeed() {
       avatar: "../assets/Useprofile.png",
       name: "Kate_Martin",
       time: "June 17",
-      status:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis metus et dui molestie, sit amet euismod nunc finibus. Nam dignissim neque lectus.!",
+      status: "Lorem ipsum dolor sit amet, consectetur adipiscing elit!",
       postImg: "https://pixabay.com/images/id-155554/",
     },
-    // {
-    //   avatar: "../assets/Useprofile2.png",
-    //   name: "Ellipsy_Martin",
-    //   time: "June 18",
-    //   status: "Looking_towards!!",
-    //   postImg: "https://pixabay.com/images/id-1556177/",
-    // },
+    {
+      avatar: "../assets/Useprofile2.png",
+      name: "Ellipsy_Martin",
+      time: "June 18",
+      status: "Looking_towards!!",
+      postImg: "https://pixabay.com/images/id-1556177/",
+    },
   ]);
 
   return (
-    <div className="container">
+    <Layout className="container">
       {post.map((user) => {
         return (
           <div className="userPost">
@@ -33,7 +34,7 @@ function PostFeed() {
               <div className="profile">
                 <Avatar
                   className="rounded"
-                  src={post.avatar}
+                  src={Profile}
                   width={50}
                   height={50}
                   layout="fixed"
@@ -44,7 +45,7 @@ function PostFeed() {
             <div className="sts">
               <div className="created-time">{user.time}</div>
               <div className="picture">
-                <div className="userStatus">{user.status}</div>
+                <p className="userStatus">{user.status}</p>
               </div>
               <div className="userPost">
                 <img src={user.postImg} alt="user2" />
@@ -53,7 +54,7 @@ function PostFeed() {
           </div>
         );
       })}
-    </div>
+    </Layout>
   );
 }
 
