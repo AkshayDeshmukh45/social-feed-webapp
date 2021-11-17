@@ -46,7 +46,7 @@ function Header() {
               layout="fixed"
               style={{ marginRight: "10px" }}
             />
-            <Button type="primary" style={{ background: "red" }}>
+            <Button type="primary" style={{ background: "red", border: "none" }}>
               Add Post
             </Button>
           </div>
