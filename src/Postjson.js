@@ -1,18 +1,15 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useDate} from "react";
 import { moment, time} from "moment";
 import { Avatar,Layout } from "antd";
 // import { UserOutlined } from "@ant-design/icons";
 import Profile from "./Profile.png";
 import Posts from "./Posts.json";
-import './Postjson.css'
+import './Postjson.css';
 
 
 function Postjson() {
-const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-
-
+ 
   return (
     <Layout className="container">
       {Posts.map((user) => {
@@ -29,7 +26,7 @@ const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
               <div className="userName">{user.from.name}</div>
             </div>
             <div className="sts">
-              <div className="created-time">{timezone}</div>
+              <div className="created-time">{user.created_time}</div>
               <div className="picture">
                 <div className="userStatus">{user.message}</div>
               </div>

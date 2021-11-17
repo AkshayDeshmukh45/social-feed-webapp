@@ -24,7 +24,7 @@ function CommentBox() {
     </div>        
       <Form.Item>
         <TextArea rows={1} onChange={onChange} placeholder="Write a comment here"
-        style={{width: "290px",maxHeight: "35px",marginLeft:"10px",boxShadow: "0px 5px 7px -7px rgba(0, 0, 0, 0.75)" }}/>
+        style={{maxWidth: "290px",maxHeight: "35px",marginLeft:"10px",boxShadow: "0px 5px 7px -7px rgba(0, 0, 0, 0.75)" }}/>
       </Form.Item>
       {/* <Form.Item>
         <Button htmlType="submit" type="primary">
