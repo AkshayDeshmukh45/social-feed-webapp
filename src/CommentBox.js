@@ -7,8 +7,12 @@ function CommentBox() {
   const { TextArea } = Input;
   const [comment, setComment] = useState("");
 
+cont submitCommit =(event)=>{
+event.preventDefault();
+}
+
   const onChange = (e) => {
-    e.target.value = comment;
+    setComment(e.target.value);
   };
   return (
     <div className="commentbox">
@@ -22,9 +26,9 @@ function CommentBox() {
               style={{ marginLeft: "20px" }}
             />
     </div>        
-      <Form.Item>
+      <Form.Item onSubmit={submitCommit}>
         <TextArea rows={1} onChange={onChange} placeholder="Write a comment here"
-        style={{maxWidth: "290px",maxHeight: "35px",marginLeft:"10px",boxShadow: "0px 5px 7px -7px rgba(0, 0, 0, 0.75)" }}/>
+        style={{width: "300px",maxHeight: "25px",marginLeft:"10px",boxShadow: "1px 5px 7px -7px rgba(0, 0, 0, 0.75)" }}/>
       </Form.Item>
       {/* <Form.Item>
         <Button htmlType="submit" type="primary">
