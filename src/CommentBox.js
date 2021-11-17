@@ -16,7 +16,7 @@ event.preventDefault();
   };
   return (
     <div className="commentbox">
-    <div>
+    
     <Avatar
               className="commentAvatar"
               src={Profile}
@@ -25,7 +25,7 @@ event.preventDefault();
               layout="fixed"
               style={{ marginLeft: "20px" }}
             />
-    </div>        
+          
       <Form.Item onSubmit={submitCommit}>
         <TextArea rows={1} onChange={onChange} placeholder="Write a comment here"
         style={{width: "300px",maxHeight: "25px",marginLeft:"10px",boxShadow: "1px 5px 7px -7px rgba(0, 0, 0, 0.75)" }}/>
