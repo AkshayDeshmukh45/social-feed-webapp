@@ -7,7 +7,7 @@ function CommentBox() {
   const { TextArea } = Input;
   const [comment, setComment] = useState("");
 
-cont submitCommit =(event)=>{
+const submitCommit =(event)=>{
 event.preventDefault();
 }
 
