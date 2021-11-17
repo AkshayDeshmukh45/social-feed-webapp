@@ -13,7 +13,7 @@ function App() {
       <UploadPost />
       {/* <PostFeed /> */}
       <Postjson/>
-      {/* <CommentWidgets /> */}
+      <CommentWidgets />
       <CommentBox />
     </div>
   )

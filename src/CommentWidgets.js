@@ -8,14 +8,14 @@ function CommentWidgets() {
     <div style={{
           width: "5%",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           alignItems: "center",
           position: "relative",
           left: "33vw",
-          top: "10rem",
+          top: "55px",
         }}>
-      <Button><HeartOutlined/></Button>
-      <Button><CommentOutlined /></Button>
+     <HeartOutlined/>
+     <CommentOutlined />
     </div>
   );
 }
