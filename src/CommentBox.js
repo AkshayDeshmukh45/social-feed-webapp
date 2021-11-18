@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, TextArea, Input, Avatar, Layout } from "antd";
+import { Form, Input, Avatar, Layout } from "antd";
 import Profile from "./Profile.png";
 import "./CommentBox.css";
 

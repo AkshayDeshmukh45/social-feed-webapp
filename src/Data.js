@@ -3,14 +3,14 @@ import React from "react";
 // import { moment, time } from "moment";
 import { Card, Avatar} from "antd";
 import Profile from "./Profile.png";
-import Posts from "./Posts.json";
+import Data from "./Data.json";
 import "./Postjson.css";
  
 function Postjson() {
-  console.log(JSON.stringify(Posts))
+
   return (
     <>
-      {Posts.map((user) => {
+      {Data.map((user) => {
         return (
           <Card className="container">
             <div className="userPost">
