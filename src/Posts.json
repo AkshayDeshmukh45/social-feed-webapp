@@ -1,46 +1,32 @@
 [
-   {
-     "avatar": "Avatar",
-     "from": {
-       "name": "Tom Brady"
-     },
-     "message": "Looking forward to 2022!",
-     "actions": [
-       {
-        
-         "name": "Comment",
-         "link": "http://www.facebook.com/X999/posts/Y999",
-         "url": "https://pixabay.com/images/id-1850465/"
-       },
-       {
-         "name": "Like",
-         "link": "http://www.facebook.com/X999/posts/Y999",
-         "url": "https://pixabay.com/images/id-434918/"
-       }
-     ],
-     "type": "status",
-     "created_time": "2010-08-02T21:27:44+0000",
-     "updated_time": "2010-08-02T21:27:44+0000"
-   },
-   {
-    "avatar": "Avatar1",
-     "from": {
-       "name": "Peyton Manning"
-     },
-     "message": "Where's my contract?",
-     "actions": [
-       {
-         "name": "Comment",
-         "link": "http://www.facebook.com/X998/posts/Y998"
-       },
-       {
-         "name": "Like",
-         "link": "http://www.facebook.com/X998/posts/Y998"
-       }
-     ],
-     "type": "status",
-     "created_time": "2010-08-02T21:27:44+0000",
-     "updated_time": "2010-08-02T21:27:44+0000"
-   }
- ]
- 
+  {
+    "avatar": "./Useprofile.png",
+    "name": "Tom Brady",
+    "message": "Looking forward to 2022!",
+   
+    "caption": [
+      {
+        "name": "Comment",
+        "link": "http://www.facebook.com/X999/posts/Y999",
+        "url": "https://pixabay.com/images/id-1850465/",
+        "created_time": "2010-08-02T21:27:44+0000",
+        "updated_time": "2010-08-02T21:27:44+0000"
+      }
+    ]
+  },
+  {
+    "avatar": "./Useprofile2.png",
+    "name": "Peyton Manning",
+    "message": "Where's my contract?",
+    
+    "caption": [
+      {
+        "name": "Like",
+        "link": "http://www.facebook.com/X999/posts/Y999",
+        "url": "https://pixabay.com/images/id-434918/",
+        "created_time": "2010-08-02T21:27:44+0000",
+        "updated_time": "2010-08-02T21:27:44+0000"
+      }
+    ]
+  }
+]

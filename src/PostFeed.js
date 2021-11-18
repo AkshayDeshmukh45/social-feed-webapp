@@ -10,14 +10,14 @@ import Posts from "./Posts.json";
 function PostFeed() {
   const [post, setPost] = useState([
     {
-      avatar: "../assets/Useprofile.png",
+      avatar: "./Useprofile.png",
       name: "Kate_Martin",
       time: "June 17",
       status: "Lorem ipsum dolor sit amet, consectetur adipiscing elit!",
       postImg: "https://pixabay.com/images/id-155554/",
     },
     {
-      avatar: "../assets/Useprofile2.png",
+      avatar: "./Useprofile2.png",
       name: "Ellipsy_Martin",
       time: "June 18",
       status: "Looking_towards!!",

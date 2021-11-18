@@ -23,10 +23,10 @@ function Postjson() {
                   height={50}
                 />
               </div>
-              <div className="userName">{user.from.name}</div>
+              <div className="userName">{user.name}</div>
             </div>
             <div className="sts">
-              <div className="created-time">{user.created_time}</div>
+              <div className="created-time">{user.caption[0].created_time}</div>
               <div className="picture">
                 <div className="userStatus">{user.message}</div>
               </div>
