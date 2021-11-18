@@ -1,7 +1,7 @@
 import React from "react";
 import { useState,useDate} from "react";
 import { moment, time} from "moment";
-import { Avatar,Layout } from "antd";
+import {Card, Avatar,Layout } from "antd";
 // import { UserOutlined } from "@ant-design/icons";
 import Profile from "./Profile.png";
 import Posts from "./Posts.json";
@@ -11,7 +11,7 @@ import './Postjson.css';
 function Postjson() {
  
   return (
-    <Layout className="container">
+    <Card className="container">
       {Posts.map((user) => {
         return (
           <div className="userPost">
@@ -37,7 +37,9 @@ function Postjson() {
           </div>
         );
       })}
-    </Layout>
+    </Card>
+
+   
   );
 }
 
