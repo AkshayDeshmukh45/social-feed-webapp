@@ -6,7 +6,6 @@
    
     "caption": [
       {
-        "name": "Comment",
         "link": "http://www.facebook.com/X999/posts/Y999",
         "url": "https://pixabay.com/images/id-1850465/",
         "created_time": "2010-08-02T21:27:44+0000",
@@ -21,7 +20,6 @@
     
     "caption": [
       {
-        "name": "Like",
         "link": "http://www.facebook.com/X999/posts/Y999",
         "url": "https://pixabay.com/images/id-434918/",
         "created_time": "2010-08-02T21:27:44+0000",
