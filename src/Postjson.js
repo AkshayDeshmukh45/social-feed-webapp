@@ -2,7 +2,6 @@ import React from "react";
 import { useState,useDate} from "react";
 import { moment, time} from "moment";
 import {Card, Avatar,Layout } from "antd";
-// import { UserOutlined } from "@ant-design/icons";
 import Profile from "./Profile.png";
 import Posts from "./Posts.json";
 import './Postjson.css';
@@ -10,10 +9,10 @@ import './Postjson.css';
 
 function Postjson() {
  
-  return (
+     
+  return (<> {Posts.map((user) => {
+    return (
     <Card className="container">
-      {Posts.map((user) => {
-        return (
           <div className="userPost">
             <div className="prof">
               <div className="profile">
@@ -35,12 +34,12 @@ function Postjson() {
               </div>
             </div>
           </div>
-        );
-      })}
+       
     </Card>
-
-   
-  );
+     );
+      })}
+    </>
+  )
 }
 
 export default Postjson;
