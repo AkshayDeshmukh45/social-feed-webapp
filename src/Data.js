@@ -7,7 +7,7 @@ import Data from "./Data.json";
 import "./Postjson.css";
  
 function Postjson() {
-// const data =[{"name":"test1"},{"name":"test2"}];
+
   return (
     <>
       {Data.map((user) => {
