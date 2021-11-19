@@ -1,7 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import { Card, Avatar } from "antd";
-import Profile from "./Profile.png";
 import CommentBox from "./CommentBox";
 import CommentWidgets from "./CommentWidgets";
 import UploadPost from "./UploadPost.js";
@@ -17,6 +15,7 @@ function App() {
         <CommentWidgets />
         <CommentBox />
       </div>
+
       <div style={{ position: "absolute", top: "100%" }}>
         <CommentWidgets />
         <CommentBox />
