@@ -5,21 +5,21 @@ import CommentBox from './CommentBox';
 import CommentWidgets from "./CommentWidgets";
 import UploadPost from './UploadPost.js'
 import Postjson from './Postjson';
-import Data from './Data.js'
+import User from './User.js';
 function App() {
   return (
     <div>
     
       <Header />
       <UploadPost />
-      {/* <PostFeed /> */}
+     
     <div>
       <Postjson/>
       <CommentWidgets />
       <CommentBox />
      </div> 
     <div style={{position:"absolute", top:"85%"}}>
-      <Data />
+      <User />
       <CommentWidgets />
       <CommentBox />
      </div> 

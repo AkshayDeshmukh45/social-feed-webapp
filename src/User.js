@@ -1,16 +1,32 @@
 import React from "react";
 // import { useState, useDate } from "react";
 // import { moment, time } from "moment";
-import { Card, Avatar} from "antd";
+import { Card, Avatar } from "antd";
 import Profile from "./Profile.png";
-import Data from "./Data.json";
 import "./Postjson.css";
- 
-function Postjson() {
+import "./User.css";
 
+function User() {
+  const user1 = [
+    {
+      name: "Jon Doe",
+      time: "June 17",
+      message: "Looking forward to 2022!",
+      profile: "./profile.png"
+    },
+  ]
+  const user2= [
+    {
+      name: "Abhinandan",
+      time: "June 20",
+      message: "Looking forward to 2022!",
+      profile: "./profile1.png"
+    }
+  ]
+  
   return (
     <>
-      {Data.map((user) => {
+      {user2.map((user) => {
         return (
           <Card className="container">
             <div className="userPost">
@@ -22,24 +38,22 @@ function Postjson() {
               </div>
               <div className="sts">
                 <div className="created-time">
-                  {user.caption.created_time}
+                  {user.time}
                 </div>
                 <div className="picture">
                   <div className="userStatus">{user.message}</div>
-                  Data.items.name
                 </div>
                 <div className="userPost">
-                  <img src={user.url} alt="user2" />
+                  <img src={user.profile} alt="user1" />
                 </div>
               </div>
             </div>
           </Card>
         );
       })}
+      
     </>
   );
 }
 
-export default Postjson;
-
-
+export default User;
