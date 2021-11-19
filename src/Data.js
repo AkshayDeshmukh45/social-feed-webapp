@@ -7,7 +7,7 @@ import Data from "./Data.json";
 import "./Postjson.css";
  
 function Postjson() {
-
+// const data =[{"name":"test1"},{"name":"test2"}];
   return (
     <>
       {Data.map((user) => {
@@ -22,10 +22,11 @@ function Postjson() {
               </div>
               <div className="sts">
                 <div className="created-time">
-                  {user.caption[0].created_time}
+                  {user.caption.created_time}
                 </div>
                 <div className="picture">
                   <div className="userStatus">{user.message}</div>
+                  Data.items.name
                 </div>
                 <div className="userPost">
                   <img src={user.url} alt="user2" />

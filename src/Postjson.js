@@ -1,13 +1,13 @@
 import React from "react";
 // import { useState, useDate } from "react";
 // import { moment, time } from "moment";
-import { Card, Avatar} from "antd";
+import { Card, Avatar } from "antd";
 import Profile from "./Profile.png";
 import Posts from "./Posts.json";
 import "./Postjson.css";
- 
+
 function Postjson() {
-  console.log(JSON.stringify(Posts))
+  console.log(JSON.stringify(Posts));
   return (
     <>
       {Posts.map((user) => {
@@ -40,5 +40,3 @@ function Postjson() {
 }
 
 export default Postjson;
-
-
