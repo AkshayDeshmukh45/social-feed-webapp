@@ -9,7 +9,7 @@ function Postjson() {
       name: "Jon Doe",
       time: "June 17",
       message: "Looking forward to 2022!",
-      profile: "./profile.png",
+      post: "./profile.png",
     },
   ];
   const user2 = [
@@ -17,7 +17,7 @@ function Postjson() {
       name: "Peters Berg",
       time: "June 20",
       message: "Looking forward to 2022!",
-      profile: "./profile1.png",
+      post: "./profile1.png",
     },
   ];
 
@@ -52,9 +52,20 @@ function Postjson() {
                   <div className="picture">
                     <div className="userStatus">{user.message}</div>
                   </div>
-                  <div className="userPost">
-                    <img src={user.profile} alt="user1" />
-                  </div>
+                  <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={
+                     <img
+                        height={450}
+                        width={150}
+                        alt="example"
+                        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                      />
+                    }
+                  >
+                  </Card>
+                  ,
                 </div>
               </div>
             </Card>
@@ -77,9 +88,19 @@ function Postjson() {
                   <div className="picture">
                     <div className="userStatus">{user.message}</div>
                   </div>
-                  <div className="userPost">
-                    <img src={user.profile} alt="user2" />
-                  </div>
+                   <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={
+                      <img
+                        height={250}
+                        width={150}
+                        alt="example"
+                        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                      />
+                    }
+                  >
+                  </Card>
                 </div>
               </div>
             </Card>

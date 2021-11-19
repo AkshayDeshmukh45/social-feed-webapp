@@ -1,7 +1,7 @@
 @import "~antd/dist/antd.css";
 
-.container {
-  width: 30%;
+/* .container {
+  width: 30vw;
   background-color: #f0f2f5;
   border-radius: 10px;
   margin-left: 30vw;
@@ -12,7 +12,7 @@
   top: 35%;
   text-align: start;
   
-}
+} */
 
 .profile {
   border-radius: 50px;
@@ -30,14 +30,14 @@
 }
 .userName {
   position: absolute;
-  padding-top: 20px;
-  margin-left: 4vw;
+  padding-top: 10px;
+  margin-left: 3vw;
   font-size: 16px;
   font-weight: bold;
 }
 .prof {
   display: flex;
-  justify-content: space-between;
+  justify-content: inline;
 }
 
 .sts {
@@ -58,4 +58,6 @@
 .userStatus {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
 }
