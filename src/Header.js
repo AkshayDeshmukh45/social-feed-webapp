@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import { Button, Input, Avatar, Layout } from "antd";
 import Logo from "./logo.png";
-import Profile from "./Profile.png";
+import Profile from "./profile2.png";
 
 import {
   HomeOutlined,

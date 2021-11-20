@@ -2,8 +2,8 @@
 .commentbox{
 margin-left: 30vw;
 display: flex;
-justify-content: inline;
+flex-direction: row;
+flex-wrap: wrap;
 position: relative;
-top: 205px;
+top: 86vh;
 }
-

@@ -6,7 +6,7 @@ import UploadPost from "./UploadPost.js";
 import Postjson from "./Postjson";
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <UploadPost />
 
@@ -16,11 +16,9 @@ function App() {
         <CommentBox />
       </div>
 
-      <div style={{ position: "absolute", top: "100%" }}>
-        <CommentWidgets />
-        <CommentBox />
-      </div>
-    </div>
+      
+
+    </>
   );
 }
 

@@ -5,16 +5,22 @@ import "./CommentWidgets";
 function CommentWidgets() {
   return (
     <div style={{
-          width: "5%",
+          width: "7vw",
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "relative",
-          left: "34vw",
-          top: "185px",
+          justifyContent: "space-evenly",
+          alignItems: "flex-start",
+          position: "absolute",
+          left: "32vw",
+          top: "125vh",
         }}>
+    <div>    
      <HeartOutlined/>
+     25
+     </div>
+     <div>
      <CommentOutlined />
+     23
+     </div>
     </div>
   );
 }

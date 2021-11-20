@@ -3,7 +3,7 @@ import { Input, Card, Avatar, Form } from "antd";
 import "./UploadPost.css";
 import { useState } from "react";
 // import { UserOutlined } from "@ant-design/icons";
-import Profile from "./Profile.png";
+import Profile from "./profile2.png";
 
 
 function UploadPost() {
