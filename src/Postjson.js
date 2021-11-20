@@ -4,6 +4,14 @@ import Profile from "./Profile.png";
 import "./Postjson.css";
 
 function Postjson() {
+  const style = { 
+  
+      // Adding media querry.. 
+      '@media (max-width: 800px)': { 
+        display: 'none', 
+      }, 
+    };
+
   const user1 = [
     {
       name: "Jon Doe",
@@ -27,7 +35,8 @@ function Postjson() {
         {user1.map((user) => {
           return (
             <Card
-              style={{
+              style={{ 
+                
                 width: "30%",
                 marginLeft: "30vw",
                 height: "50vh",
@@ -45,27 +54,26 @@ function Postjson() {
                   <div className="profile">
                     <Avatar src={Profile} width={50} height={50} />
                   </div>
-                  <div className="userName">{user.name}</div>
+                  <div style={style} className="userName">{user.name}</div>
                 </div>
                 <div className="sts">
                   <div className="created-time">{user.time}</div>
                   <div className="picture">
                     <div className="userStatus">{user.message}</div>
                   </div>
-                  <Card
+                    <Card
                     hoverable
-                    style={{ width: 240 }}
+                    style={{ width: "30%" }}
                     cover={
-                     <img
-                        height={450}
+                      <img
+                        height={250}
                         width={150}
                         alt="example"
-                        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc"
                       />
                     }
                   >
                   </Card>
-                  ,
                 </div>
               </div>
             </Card>
@@ -90,13 +98,13 @@ function Postjson() {
                   </div>
                    <Card
                     hoverable
-                    style={{ width: 240 }}
+                    style={{ width: "30%" }}
                     cover={
                       <img
-                        height={250}
+                        height={150}
                         width={150}
                         alt="example"
-                        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc"
                       />
                     }
                   >
