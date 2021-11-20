@@ -4,6 +4,7 @@ import CommentBox from "./CommentBox";
 import CommentWidgets from "./CommentWidgets";
 import UploadPost from "./UploadPost.js";
 import Postjson from "./Postjson";
+
 function App() {
   return (
     <>
@@ -15,9 +16,6 @@ function App() {
         <CommentWidgets />
         <CommentBox />
       </div>
-
-      
-
     </>
   );
 }
