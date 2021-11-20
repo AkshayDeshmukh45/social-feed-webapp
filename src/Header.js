@@ -17,9 +17,9 @@ function Header() {
 
   return (
     <div className="header">
-      <Layout style={{ background: "white" }}>
+      <Layout style={{ background: "white", display:"flex", gap: "15px" }}>
         <Header className="header" style={{ background: "white" }}>
-          <div className="header-widgets">
+          <div className="header-widgets" >
             <HomeOutlined />
             Home
             <NotificationOutlined />

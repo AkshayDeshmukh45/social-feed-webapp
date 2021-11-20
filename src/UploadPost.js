@@ -25,7 +25,7 @@ function UploadPost() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="What's happening"
             className="inputArea"
-            style={{ textAlign: "left" }}
+            style={{ textAlign: "left",display: "flex", flexWrap: "wrap" }}
           />
         </Form>
       </Card>

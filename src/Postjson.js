@@ -124,7 +124,7 @@ function Postjson() {
                             rows={2}
                             placeholder="Write a comment here"
                             style={{
-                              width: "25vw",
+                              width: "27vw",
                               height: "20px",
                               marginLeft: "10px",
                               boxShadow: "1px 5px 7px -7px rgba(0, 0, 0, 0.75)",
