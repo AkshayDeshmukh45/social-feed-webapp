@@ -40,3 +40,23 @@ Logo {
   font-size: 1rem;
   font-family: Ubuntu;
 }
+
+.modal{
+  position: absolute;
+  background-color: #FFF;
+  box-shadow:
+  -0.8px -0.8px 2.2px rgba(0, 0, 0, 0.021),
+  -2px -2px 5.3px rgba(0, 0, 0, 0.029),
+  -2.6px -2.6px 10px rgba(0, 0, 0, 0.036),
+  -0.8px -0.8px 17.9px rgba(0, 0, 0, 0.042),
+  9.1px 9.1px 33.4px rgba(0, 0, 0, 0.051),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+  padding: 20px;
+  /* right: 35%; */
+  top: 200px;
+  width: 400px;
+  height: 200px;
+  z-index: 999;
+  margin: auto;
+}
