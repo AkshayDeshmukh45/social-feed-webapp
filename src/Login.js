@@ -1,37 +1,33 @@
-import React, { useState } from 'react'
-import { Alert } from 'antd';
+import React, { useState } from "react";
+import { Alert } from "antd";
 
+export default function Login() {
+  const [emaillog, setEmaillog] = useState(" ");
+  const [passwordlog, setPasswordlog] = useState(" ");
 
-function Login() {
+  const [flag, setFlag] = useState(false);
 
-    const [emaillog, setEmaillog] = useState(" ");
-    const [passwordlog, setPasswordlog] = useState(" ");
+  function handleLogin(e) {
+    e.preventDefault();
+    let pass = localStorage.getItem("Password").replace(/"/g, "");
+    let mail = localStorage.getItem("Email").replace(/"/g, "");
+    // .replace(/"/g,"") is used to remove the double quotes for the string
 
-    const [flag, setFlag] = useState(false);
-
-
-
-    function handleLogin(e) {
-        e.preventDefault();
-        let pass = localStorage.getItem('Password').replace(/"/g, "");
-        let mail = localStorage.getItem('Email').replace(/"/g, "");
-        // .replace(/"/g,"") is used to remove the double quotes for the string
-
-        if (!emaillog || !passwordlog) {
-            setFlag(true);
-            console.log("EMPTY");
-        } else if ((passwordlog !== pass) || (emaillog !== mail)) {
-            setFlag(true);
-        } else {
-            
-            setFlag(false);
-        }
+    if (!emaillog || !passwordlog) {
+      setFlag(true);
+      console.log("EMPTY");
+    } else if (passwordlog !== pass || emaillog !== mail) {
+      setFlag(true);
+    } else {
+      setFlag(false);
     }
+  }
 
+  return (
+  <div>
 
-    return (
-        <div>
-            {home ? <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin}>
+            
                 <h3>LogIn</h3>
                 <div className="form-group">
                     <label>Email</label>
@@ -45,14 +41,8 @@ function Login() {
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Login</button>
 
-                {flag && <Alert color='primary' variant="warning" >
-                    Fill correct Info else keep trying.
-                        </Alert>}
-            </form>
-            
-
-        </div>
-    )
+                
+      </form>;
+    </div>
+  )
 }
-
-export default Login;

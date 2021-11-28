@@ -27,11 +27,13 @@ function Signup() {
 
         } else {
             setFlag(false);
-            localStorage.setItem("hardikSubmissionEmail", JSON.stringify(email));
-            localStorage.setItem("hardikSubmissionPassword", JSON.stringify(password));
+            alert(
+            localStorage.setItem("Email", JSON.stringify(email));
+            localStorage.setItem("Password", JSON.stringify(password));
             console.log("Saved in Local Storage");
-
+            
             setLogin(!login)
+
 
         }
 
@@ -78,17 +80,6 @@ function Signup() {
                 <div className="form-group">
                     <label>Phone No.</label>
                     <input type="Phone" className="form-control" placeholder="Enter contact no" onChange={(event) => setPhone(event.target.value)} />
-                </div>
-
-                <div className="form-group">
-                    <label>Choose your Profession</label>
-                    <Form.Control as="select" onChange={(event) => setProfession(event.target.value)} >
-                        <option>Developer</option>
-                        <option>Artist</option>
-                        <option>Photographer</option>
-                        <option>Team Player</option>
-                        <option>Full Stack</option>
-                    </Form.Control>
                 </div>
 
 

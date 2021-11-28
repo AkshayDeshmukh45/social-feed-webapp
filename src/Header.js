@@ -40,14 +40,14 @@ function Header() {
         .then((data) => {
           console.log(data, "this is data from cloudinary");
           // setimage(data.secure_url);
-          // localStorage.setItem("sjdgsjd", JSON.stringify(data.url));
+          // localStorage.setItem("img", JSON.stringify(data.url));
           const temp = { Image: data.url, Title: title };
           localStorage.setItem("Values", JSON.stringify(temp));
           // setPreView(data.url);
         })
         .catch((e) => console.log(e, "error from the n catch"));
     } catch (e) {
-      console.log(e, "error while sending in local storage");
+      console.log(e, "error while sending in cloudinary");
     }
   };
 
@@ -72,27 +72,50 @@ function Header() {
   };
 
   return (
-    <div className="header">
-      <Layout style={{ background: "white", display: "flex", gap: "15px" }}>
-        <Header className="header" style={{ background: "white" }}>
-          <div className="header-widgets">
-            <HomeOutlined />
-            Home
-            <NotificationOutlined />
-            Notifications
-            <MessageOutlined />
-            Messages
+    <div className="header row">
+      <div className="h-10  border p-4  w-100 d-flex justify-content-around flex-wrap">
+        {/* Left Side */}
+        <div
+          className="d-flex justify-content-around   md:w-100  flex-wrap"
+          // style={{ marginLeft: "100px" }}
+        >
+          <div
+            className="d-flex"
+            style={{ alignSelf: "start", alignContent: "start" }}
+          >
+            <HomeOutlined style={{ fontSize: "20px",marginLeft: "20px" }} />
+            <span className="" style={{ color: "blue", fontSize: "15px" }}>
+              {" "}
+              Home
+            </span>
           </div>
-          <div className="header-logo">
-            <img src={Logo} height={30} width={20} />
-            <h3 className="name">Trip Gyan</h3>
+          <div className="d-flex">
+            <NotificationOutlined style={{ fontSize: "20px",marginLeft: "20px" }}  />
+            <span className="" style={{ color: "blue", fontSize: "15px" }}>
+              {" "}
+              Notifications
+            </span>
           </div>
-          <div className="addpost-section">
+          <div className="d-flex">
+            <MessageOutlined style={{ fontSize: "20px",marginLeft: "20px" }} />
+            <span className="" style={{ color: "blue", fontSize: "15px" }}>
+              Messages
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <img src={Logo} height={30} width={20} />
+          <span>Trip Gyan</span>
+        </div>
+        <div>
+          <div className="d-flex">
+            {/* <input type="text" /> */}
             <Search
               placeholder="Search Tripgyan"
               allowClear
               onSearch={Search}
-              style={{ width: "20vw", marginRight: "20px" }}
+              // style={{ width: "20vw", marginRight: "20px" }}
             />
             <Avatar
               className="rounded"
@@ -100,76 +123,12 @@ function Header() {
               width={40}
               height={40}
               layout="fixed"
-              style={{ marginRight: "10px" }}
+              style={{ marginLeft: "20px" }}
             />
-            <Button
-              type="primary"
-              style={{ background: "red", border: "none" }}
-              onClick={() => {
-                setOpenModal(!openModal);
-              }}
-            >
-              Add Post
-            </Button>
-            <div
-              className="modal"
-              style={{ display: openModal ? "block" : "none" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "start",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <input
-                  type="text"
-                  value={title}
-                  placeholder="Enter Caption Here"
-                  onChange={(e) => setTitle(e.target.value)}
-                  style={{ width: "80%", borderRadius: "20px" }}
-                />
-                <input
-                  // className="abcd"
-
-                  type="file"
-                  name="img-upload"
-                  onChange={takeImg}
-                  // onChange={(e) => handleImage(e.target.files)}
-                  value={img}
-                />
-                <button
-                  style={{
-                    width: "10rem",
-                    padding: "0px",
-                    borderRadius: "15px",
-                    marginTop: "1rem",
-                  }}
-                  onClick={storageValues}
-                >
-                  Submit
-                </button>
-              </div>
-
-              {/* <form action="" onSubmit={storageValues}>
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <input className="upload-img" type="file" name="img-upload" 
-                onChange={takeImg} 
-                // onChange={(e) => handleImage(e.target.files)}
-                value={img}/>
-                <br />
-                <input type="submit" name="Submit" style={{backgroundColor: "yellow"}}/>
-              </form> */}
-              {/* {
-                preView && (
-                  <img src={preView} alt="" style={{width: "200px", height: "200px"}} />
-                )
-              } */}
-            </div>
           </div>
-        </Header>
-      </Layout>
+        </div>
+      </div>
+      
     </div>
   );
 }
