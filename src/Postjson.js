@@ -50,22 +50,21 @@ function Postjson() {
       message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
-
     {
       id: 4,
-      name: "John Doe",
-      time: "Nov 2",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 5,
       name: "Peters Berg",
       time: "June 20",
       message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
 
+    {
+      id: 5,
+      name: "Ellipsy Perry",
+      time: "June 20",
+      message: "Thats was amazing Trip",
+      post: "./prof.png",
+    },
     {
       id: 6,
       name: "Peters Berg",
@@ -73,55 +72,7 @@ function Postjson() {
       message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
-    {
-      id: 7,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 8,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 9,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 10,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 11,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 12,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 13,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
+   
   ];
   const takeImg = async (event) => {
     // const file = event.target.files;

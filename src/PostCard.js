@@ -10,7 +10,7 @@ import {
   DislikeOutlined,
   CommentOutlined,
 } from "@ant-design/icons";
-const { Meta } = Card;
+
 
 
 function PostCard({ user, userName }) {
@@ -26,7 +26,7 @@ function PostCard({ user, userName }) {
   const [toggleUpload, setToggleUpload] = useState(false);
   const [toggleComment, setToggleComment] = useState(false);
 
-
+  const { Meta } = Card;
    //getting data from localStorage
   useEffect(() => {
     const getData = localStorage.getItem("user");
@@ -74,8 +74,8 @@ function PostCard({ user, userName }) {
       >
         <div className="row-xl-6  " style={{ alignSelf: "start" }}>
           <img src={Profile} style={{ objectFit: "contain", width: "2rem" }} />
-          <span> {userName?.name}</span>
-          <div className="ml-6">{dateTime}</div>
+          <span style={{color: "#fca000",fontWeight: "600" }}> {userName?.name}</span>
+          <div style={{marginLeft:"15px",fontWeight: "600" }} className="ml-6">{dateTime}</div>
           <Meta className="mt-2" title={user?.Title} />
         </div>
         <div>
