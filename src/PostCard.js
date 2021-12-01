@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import moment from 'moment'
+import moment from "moment";
 import { Card, Row } from "antd";
 import Profile from "./profile2.png";
 import {
@@ -11,23 +11,20 @@ import {
   CommentOutlined,
 } from "@ant-design/icons";
 
-
-
 function PostCard({ user, userName }) {
-
   //USING POST UPDATED TIME
-  let localDate = moment()
-  let dateTime = localDate.format('MMM-DD')
+  let localDate = moment();
+  let dateTime = localDate.format("MMM-DD");
 
   const [LikeDislike, setLikeDislike] = useState(0);
   const [comment, setcomment] = useState("");
   const [showComments, setshowComments] = useState([]);
-  
+
   const [toggleUpload, setToggleUpload] = useState(false);
   const [toggleComment, setToggleComment] = useState(false);
 
   const { Meta } = Card;
-   //getting data from localStorage
+  //getting data from localStorage
   useEffect(() => {
     const getData = localStorage.getItem("user");
 
@@ -57,14 +54,17 @@ function PostCard({ user, userName }) {
     // event.preventDefault();
   }
   return (
-    <div className="col-xl-4 col-lg-4 col-md-12 " style={{backgroundColor:"white", margin: "auto" }}>
+    <div
+      className="col-xl-4 col-lg-4 col-md-12 "
+      style={{ backgroundColor: "white", margin: "auto" }}
+    >
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          //   border: "1px solid grey",
+          // border: "1px solid grey",
           padding: "1rem",
           borderRadius: "10px ",
           margin: "auto",
@@ -74,8 +74,16 @@ function PostCard({ user, userName }) {
       >
         <div className="row-xl-6  " style={{ alignSelf: "start" }}>
           <img src={Profile} style={{ objectFit: "contain", width: "2rem" }} />
-          <span style={{color: "#fca000",fontWeight: "600" }}> {userName?.name}</span>
-          <div style={{marginLeft:"15px",fontWeight: "600" }} className="ml-6">{dateTime}</div>
+          <span style={{ color: "#fca000", fontWeight: "600" }}>
+            {" "}
+            {userName?.name}
+          </span>
+          <div
+            style={{ marginTop: "-12px",marginLeft: "40px", fontWeight: "600" }}
+            className="ml-6"
+          >
+            {dateTime}
+          </div>
           <Meta className="mt-2" title={user?.Title} />
         </div>
         <div>
@@ -107,7 +115,7 @@ function PostCard({ user, userName }) {
               <input
                 className="w-100"
                 placeholder="Enter Comment "
-                style={{ borderRadius: "6px", border: "1px solid #4D7EA8" }}
+                style={{ borderRadius: "2px", border: "1px solid grey" }}
                 type="text"
                 onChange={(e) => setcomment(e.target.value)}
               />

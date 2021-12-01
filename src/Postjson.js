@@ -137,9 +137,9 @@ function Postjson() {
           className=" col-md-12 col-xl-4   d-flex flex-column   align-items-center p-4 border w-md-50 "
           style={{
             margin: "auto",
-            borderRadius: "8px",
+            borderRadius: "10px",
             backgroundColor: "white",
-            border: "2px solid #dbdbdb"
+            border: "2px solid black"
           }}
         >
           <div className="d-flex justify-content-start w-100">
