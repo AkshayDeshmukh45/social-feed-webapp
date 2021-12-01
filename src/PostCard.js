@@ -32,6 +32,7 @@ function PostCard({ user, userName }) {
     const getData = localStorage.getItem("user");
 
     setshowComments(JSON.parse(getData));
+    //showing jsn data
     console.log(getData);
   }, [toggleComment]);
 
