@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Button, Card, Form, Input, Layout, Avatar } from "antd";
+import { Button, Card, Form, Input, Layout, Avatar } from "antd";
 import Profile from "./Profile1.png";
 import Prof from "./profile2.png";
 import PostCard from "./PostCard";
@@ -17,7 +17,6 @@ function Postjson() {
   const [img, setImg] = useState("");
 
   const [title, setTitle] = useState("");
-  // const [comment, setComment] = useState("");
   const [changComnt, SetChangeComnt] = useState("");
   const user1 = [
     {
@@ -63,7 +62,7 @@ function Postjson() {
       name: "Ellipsy Perry",
       time: "June 20",
       message: "Thats was amazing Trip",
-      post: "./prof.png",
+      post: "./profile1.png",
     },
     {
       id: 6,
@@ -72,7 +71,6 @@ function Postjson() {
       message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
-   
   ];
   const takeImg = async (event) => {
     // const file = event.target.files;
@@ -112,17 +110,6 @@ function Postjson() {
         .then(async (data) => {
           console.log(data, "this is data from cloudinary");
           setImg(data?.url);
-          // const temp = await {
-          //   Image: data?.url,
-          //   Title: title,
-          //   id: dynamicData ? dynamicData.length : 1,
-          // };
-          // var exist = await localStorage.getItem("Values");
-
-          // exist = exist ? [...JSON.parse(exist), temp] : [];
-          // console.log(exist, "exist");
-          // await localStorage.setItem("Values", JSON.stringify(exist));
-          // setPreView(data.url);
         })
         .catch((e) => console.log(e, "error from the n catch"));
     } catch (e) {
@@ -139,31 +126,11 @@ function Postjson() {
     console.log(temp, "this is temp");
   }, [togglePost]);
 
-  function getVal(event, id) {
-    // console.log(comment);
-    // const temp = { id: id, comment: changComnt };
-    // var exist = localStorage.getItem("user");
-    // exist = exist ? JSON.parse(exist.split(",")) : [];
-    // // exist = (exist)
-    // exist.push(temp);
-    // localStorage.setItem("user", JSON.stringify(exist));
-    // event.preventDefault();
-  }
+  function getVal(event, id) {}
   // console.log(comment);
   return (
     <>
       {" "}
-      {/* <div style={{ display: "flex", justifyContent: "center" }}>
-        <button
-          type="primary"
-          style={{ background: "red", border: "none", color: "white" }}
-          onClick={() => {
-            setOpenModal(!openModal);
-          }}
-        >
-          Add Post
-        </button>
-      </div> */}
       <div className="row">
         <div
           className=" col-md-12 col-xl-4   d-flex flex-column   align-items-center p-4 border w-md-50 "
@@ -188,7 +155,11 @@ function Postjson() {
               placeholder="What's happening?"
               className="w-100 md:w-80  border p-2"
               onChange={(e) => setTitle(e.target.value)}
-              style={{ marginLeft: "10px", borderRadius: "10px" }}
+              style={{
+                border: "none",
+                marginLeft: "10px",
+                borderRadius: "10px",
+              }}
             />
           </div>
 
@@ -203,7 +174,6 @@ function Postjson() {
             <Button
               className="p-1"
               style={{
-                // width: "10rem",
                 padding: "0px",
                 borderRadius: "5px",
                 color: "black",
@@ -224,7 +194,6 @@ function Postjson() {
         }}
       >
         <>
-          {/* {user2?.map((user) => { */}
           {dynamicData?.map((user, id) => {
             return <PostCard user={user} userName={user2[id]} />;
           })}
