@@ -95,6 +95,7 @@ function Postjson() {
   const handleImage = async (imageAdd) => {
     try {
       console.log(imageAdd, "handle image called");
+      
       // console.log("handleUpload called")
       const data = new FormData();
       data.append("file", imageAdd[0]);
@@ -156,6 +157,7 @@ function Postjson() {
               className="w-100 md:w-80  border p-2"
               onChange={(e) => setTitle(e.target.value)}
               style={{
+                backgroundColor: "#f5f1eb",
                 border: "none",
                 marginLeft: "10px",
                 borderRadius: "10px",
