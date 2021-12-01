@@ -51,15 +51,6 @@ function Header() {
     }
   };
 
-  // const preViewFile = (file) => {
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(file);
-  //   reader.onload = () => {
-  //     setPreView(reader.result)
-  //   };
-  //   console.log(preview);
-  // }
-
   const takeImg = async (event) => {
     const file = event.target.files;
     await handleImage(event.target.files);
@@ -77,7 +68,7 @@ function Header() {
         {/* Left Side */}
         <div
           className="d-flex justify-content-around  md:w-100  flex-wrap"
-          style={{fontFamily:"Ubuntu", }}
+          style={{ fontFamily: "Ubuntu" }}
         >
           <div
             className="d-flex"
@@ -87,7 +78,6 @@ function Header() {
               style={{
                 marginLeft: "10px",
                 fontSize: "20px",
-                marginLeft: "20px",
               }}
             />
             <span
@@ -163,7 +153,6 @@ function Header() {
               Add Post
             </Button>
           </div>
-          <div></div>
         </div>
       </div>
     </div>

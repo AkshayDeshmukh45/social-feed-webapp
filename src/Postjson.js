@@ -95,7 +95,7 @@ function Postjson() {
   const handleImage = async (imageAdd) => {
     try {
       console.log(imageAdd, "handle image called");
-      
+
       // console.log("handleUpload called")
       const data = new FormData();
       data.append("file", imageAdd[0]);
@@ -132,14 +132,14 @@ function Postjson() {
   return (
     <>
       {" "}
-      <div className="row">
+      <div>
         <div
           className=" col-md-12 col-xl-4   d-flex flex-column   align-items-center p-4 border w-md-50 "
           style={{
             margin: "auto",
-            borderRadius: "10px",
-            backgroundColor: "#dfe1e6",
-            marginTop: "0",
+            borderRadius: "8px",
+            backgroundColor: "white",
+            border: "2px solid #dbdbdb"
           }}
         >
           <div className="d-flex justify-content-start w-100">
@@ -157,10 +157,11 @@ function Postjson() {
               className="w-100 md:w-80  border p-2"
               onChange={(e) => setTitle(e.target.value)}
               style={{
-                backgroundColor: "#f5f1eb",
+                backgroundColor: "white",
                 border: "none",
                 marginLeft: "10px",
                 borderRadius: "10px",
+                
               }}
             />
           </div>
@@ -176,6 +177,8 @@ function Postjson() {
             <Button
               className="p-1"
               style={{
+                width: "60px",
+                height: "30px",
                 padding: "0px",
                 borderRadius: "5px",
                 color: "black",

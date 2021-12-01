@@ -57,7 +57,7 @@ function PostCard({ user, userName }) {
     // event.preventDefault();
   }
   return (
-    <div className="col-xl-4 col-lg-4 col-md-12 " style={{ margin: "auto" }}>
+    <div className="col-xl-4 col-lg-4 col-md-12 " style={{backgroundColor:"white", margin: "auto" }}>
       <div
         style={{
           display: "flex",

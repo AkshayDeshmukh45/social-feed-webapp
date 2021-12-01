@@ -4,15 +4,14 @@ import UploadPost from "./UploadPost.js";
 import Postjson from "./Postjson";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./Login.js";
-// import LoginLayout from "./LoginLayout.js";
-// import Login from './LoginApi.json'
 
 function App() {
   return (
     <>
       <Header />
-      <UploadPost />
-      <Postjson />
+      <div style={{backgroundColor: "#dbdbdb" }}>
+        <Postjson />
+      </div>
       {/* <Router>
       <Switch> */}
       {/* <Route path="/" exact component={Login} /> */}
