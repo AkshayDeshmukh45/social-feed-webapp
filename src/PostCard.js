@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import moment from 'moment'
 import { Card, Row } from "antd";
 import Profile from "./profile2.png";
 import {
@@ -11,36 +12,45 @@ import {
 } from "@ant-design/icons";
 const { Meta } = Card;
 
+
 function PostCard({ user, userName }) {
+
+  //USING POST UPDATED TIME
+  let localDate = moment()
+  let dateTime = localDate.format('MMM-DD')
+
   const [LikeDislike, setLikeDislike] = useState(0);
-  const [changComnt, setchangComnt] = useState("");
+  const [comment, setcomment] = useState("");
   const [showComments, setshowComments] = useState([]);
+  
   const [toggleUpload, setToggleUpload] = useState(false);
   const [toggleComment, setToggleComment] = useState(false);
-  useEffect(() => {
-    const temp = localStorage.getItem("user");
 
-    setshowComments(JSON.parse(temp));
-    console.log(temp);
+
+   //getting data from localStorage
+  useEffect(() => {
+    const getData = localStorage.getItem("user");
+
+    setshowComments(JSON.parse(getData));
+    console.log(getData);
   }, [toggleComment]);
 
   const getComments = (id) => {
     const comm = showComments?.filter((com) => com?.id == id);
-    // console.log(id, showComments, " ");
-    // console.log(" ", comm);
+    console.log(id, showComments, " ");
+    console.log(" ", comm);
 
     return comm;
   };
 
   function getVal(id) {
     // console.log(comment);
-
-    const temp = { id: id, comment: changComnt };
+    const getData = { id: id, comment: comment };
     var exist = localStorage.getItem("user");
     exist = exist ? JSON.parse(exist.split(",")) : [];
 
     // exist = (exist)
-    exist.push(temp);
+    exist.push(getData);
     localStorage.setItem("user", JSON.stringify(exist));
     setToggleComment(!toggleComment);
     // event.preventDefault();
@@ -64,25 +74,18 @@ function PostCard({ user, userName }) {
         <div className="row-xl-6  " style={{ alignSelf: "start" }}>
           <img src={Profile} style={{ objectFit: "contain", width: "2rem" }} />
           <span> {userName?.name}</span>
-          <div className="ml-6">{userName?.time}</div>
+          <div className="ml-6">{dateTime}</div>
           <Meta className="mt-2" title={user?.Title} />
         </div>
         <div>
           <Card
             hoverable
             style={{ marginTop: "1rem" }}
-            cover={
-              <img
-                alt="No image"
-                // src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                src={user.Image}
-              />
-            }
+            cover={<img alt="No image" src={user.Image} />}
           ></Card>
         </div>
         <div className="flex w-100 justify-content-start  mt-2">
           <div className="w-25 d-flex mb-2 justify-content-between">
-            
             <HeartOutlined
               onClick={() => setLikeDislike(LikeDislike == 0 ? 1 : 0)}
               style={{ fontSize: "1.25rem" }}
@@ -101,12 +104,11 @@ function PostCard({ user, userName }) {
             </div>
             <div className="col-xl-8">
               <input
-
                 className="w-100"
                 placeholder="Enter Comment "
                 style={{ borderRadius: "6px", border: "1px solid #4D7EA8" }}
                 type="text"
-                onChange={(e) => setchangComnt(e.target.value)}
+                onChange={(e) => setcomment(e.target.value)}
               />
             </div>
             <div className="col-xl-2">
@@ -119,7 +121,6 @@ function PostCard({ user, userName }) {
               </button>
             </div>
           </div>
-         
         </div>
         <div className="d-flex flex-column align-items-start w-100 justify-content-start mt-2 ">
           <span style={{ fontWeight: "bold" }}>All Comments </span>

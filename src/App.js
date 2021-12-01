@@ -1,26 +1,28 @@
 import React from "react";
 import Header from "./Header";
-import CommentBox from "./CommentBox";
-import Commentbox from "./CommentBox";
-import CommentWidgets from "./CommentWidgets";
 import UploadPost from "./UploadPost.js";
 import Postjson from "./Postjson";
-import { Route, Switch } from "react-router-dom";
-// import Signup from "./Signup.js";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./Login.js";
+// import LoginLayout from "./LoginLayout.js";
+// import Login from './LoginApi.json'
 
 function App() {
   return (
     <>
       <Header />
       <UploadPost />
-
-      <div>
-        <Postjson />
-        {/* <CommentWidgets /> */}
-        {/* <CommentBox /> */}
-      </div>
-      {/* <Signup /> */}
+      <Postjson />
+      {/* <Router>
+      <Switch> */}
+      {/* <Route path="/" exact component={Login} /> */}
+      {/* <Route path= "/LoginLayout" exact component= {LoginLayout} /> */}
+      {/* <Route path="/Header" exact component={Header} />
+      <Route path="/UploadPost" exact component={UploadPost} />
+      <Route path="/Postjson" exact component={Postjson} /> */}
+      {/* <Route path= "/Login" exact component= {Login} /> */}
+      {/* </Switch> */}
+      {/* </Router> */}
     </>
   );
 }

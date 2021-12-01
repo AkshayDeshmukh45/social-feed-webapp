@@ -9,9 +9,8 @@ export default function Login() {
 
   function handleLogin(e) {
     e.preventDefault();
-    let pass = localStorage.getItem("Password").replace(/"/g, "");
-    let mail = localStorage.getItem("Email").replace(/"/g, "");
-    // .replace(/"/g,"") is used to remove the double quotes for the string
+    let pass = localStorage.getItem("Password", JSON.parse(passwordlog));
+    let mail = localStorage.getItem("Email", JSON.parse(emaillog));
 
     if (!emaillog || !passwordlog) {
       setFlag(true);
@@ -24,25 +23,34 @@ export default function Login() {
   }
 
   return (
-  <div>
+    <div>
+      <form onSubmit={handleLogin}>
+        <h3>Login</h3>
+        <div className="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Enter email"
+            onChange={(event) => setEmaillog(event.target.value)}
+          />
+        </div>
 
-        <form onSubmit={handleLogin}>
-            
-                <h3>LogIn</h3>
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" className="form-control" placeholder="Enter email" onChange={(event) => setEmaillog(event.target.value)} />
-                </div>
+        <div className="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Enter password"
+            onChange={(event) => setPasswordlog(event.target.value)}
+          />
+        </div>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" onChange={(event) => setPasswordlog(event.target.value)} />
-                </div>
-
-                <button type="submit" className="btn btn-dark btn-lg btn-block">Login</button>
-
-                
-      </form>;
+        <button type="submit" className="btn btn-dark btn-lg btn-block">
+          Login
+        </button>
+      </form>
+      ;
     </div>
-  )
+  );
 }

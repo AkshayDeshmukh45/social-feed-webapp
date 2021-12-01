@@ -3,17 +3,16 @@ import { Form, Alert } from 'antd';
 import Login from './Login';
 
 
-function Signup() {
+export default function Signup() {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [phone, setPhone] = useState("");
-    const [profession, setProfession] = useState("");
-
-    const [flag, setFlag] = useState(false);
     const [login, setLogin] = useState(true);
-    const [info, setInfo] = useState(true);
+    const [userInfo, setUserInfo] = useState(true);
+    const [phone, setPhone] = useState("");
+    const [flag, setFlag] = useState(false);
+    
 
 
 
@@ -22,14 +21,14 @@ function Signup() {
     function handleFormSubmit(e) {
         e.preventDefault();
 
-        if (!name || !email || !password || !phone || !profession) {
+        if (!name || !email || !password || !phone) {
             setFlag(true);
 
         } else {
             setFlag(false);
             alert(
-            localStorage.setItem("Email", JSON.stringify(email));
-            localStorage.setItem("Password", JSON.stringify(password));
+            localStorage.setItem("Email", JSON.stringify(email)),
+            localStorage.setItem("Password", JSON.stringify(password))
             console.log("Saved in Local Storage");
             
             setLogin(!login)
@@ -39,24 +38,15 @@ function Signup() {
 
     }
 
-    // Directly to the login page
     function handleClick() {
         setLogin(!login)
     }
 
-    // Company Info
-    function infoClick() {
-        setInfo(!info)
-    }
-
-
-
     return (
         <>
             <nav className="navbar navbar-light">
-                <div className="container" onClick={infoClick}>
-                    <h4 className="btn btn-dark btn-lg btn-block">Company Info</h4>
-                </div>
+                
+                    <h4 className="btn btn-dark btn-lg btn-block"></h4>
             </nav>
             {info ? <div> {login ? <form onSubmit={handleFormSubmit}>
                 <h3>Register</h3>
@@ -78,7 +68,7 @@ function Signup() {
 
 
                 <div className="form-group">
-                    <label>Phone No.</label>
+                    <label>Mobile No.</label>
                     <input type="Phone" className="form-control" placeholder="Enter contact no" onChange={(event) => setPhone(event.target.value)} />
                 </div>
 
@@ -89,19 +79,12 @@ function Signup() {
                 </p>
                 {flag &&
                     <Alert color='primary' variant="danger" >
-                        I got it you are in hurry! But every Field is important!
+                        every Field is Mandatory!
                 </Alert>
                 }
 
             </form> : <Login />}
-            </div> : <div>
-                    <p><strong>Company:</strong> Geeksynergy Technologies PVT Ltd</p>
-                    <p><strong>Address:</strong> Sanjaynagar, Bengaluru-56</p>
-                    <p><strong>Phone:</strong> XXXXXXXXXX09</p>
-                    <p><strong>Email:</strong> XXXXXXXX@gmail.com</p>
-                </div>}
+            </div> }
         </>
     )
 }
-
-export default Signup;

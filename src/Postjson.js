@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Card, Form, Input, Layout, Avatar } from "antd";
+import {Button, Card, Form, Input, Layout, Avatar } from "antd";
 import Profile from "./Profile1.png";
 import Prof from "./profile2.png";
-import "./Postjson.css";
-import CommentBox from "./CommentBox";
-import CommentWidgets from "./CommentWidgets";
 import PostCard from "./PostCard";
 import {
   HomeOutlined,
   NotificationOutlined,
   MessageOutlined,
 } from "@ant-design/icons";
+
 function Postjson() {
   const { TextArea } = Input;
   const [dynamicData, setDynamicData] = useState([]);
@@ -32,46 +30,46 @@ function Postjson() {
   const user2 = [
     {
       id: 1,
-      name: "Ammela Kerr",
-      time: "June 14",
+      name: "Amella Jones",
+      time: "June 22",
       message: "Thats was amazing Trip",
-      post: "./profile2.png",
+      post: "./profile1.png",
     },
 
     {
       id: 2,
-      name: "John Doe",
-      time: "June 20",
+      name: "Tony Jones",
+      time: "Sept 20",
       message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
     {
       id: 3,
-      name: "Peters Berg",
-      time: "June 16",
+      name: "Jone Dee",
+      time: "Oct 20",
       message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
 
     {
       id: 4,
-      name: "Alleana Grande",
-      time: "Aug 20",
-      message: "Thats was amazing Jurney",
+      name: "John Doe",
+      time: "Nov 2",
+      message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
     {
       id: 5,
-      name: "Suzi Bates",
-      time: "Nov 20",
-      message: "Thats was Wonderfull",
-      post: "./profile2.png",
+      name: "Peters Berg",
+      time: "June 20",
+      message: "Thats was amazing Trip",
+      post: "./profile1.png",
     },
 
     {
       id: 6,
       name: "Peters Berg",
-      time: "DEC 20",
+      time: "June 20",
       message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
@@ -124,27 +122,6 @@ function Postjson() {
       message: "Thats was amazing Trip",
       post: "./profile1.png",
     },
-    {
-      id: 14,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 12,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
-    {
-      id: 13,
-      name: "Peters Berg",
-      time: "June 20",
-      message: "Thats was amazing Trip",
-      post: "./profile1.png",
-    },
   ];
   const takeImg = async (event) => {
     // const file = event.target.files;
@@ -161,14 +138,12 @@ function Postjson() {
     var exist = await localStorage.getItem("Values");
 
     exist = exist ? [...JSON.parse(exist), temp] : [];
-    console.log(exist, "<<<exist");
+    console.log(exist, "exist");
     await localStorage.setItem("Values", JSON.stringify(exist));
     event.preventDefault();
     setTogglePost(!togglePost);
   };
   const handleImage = async (imageAdd) => {
-    // console.log("this is image add >>>>  >>",imageAdd)
-
     try {
       console.log(imageAdd, "handle image called");
       // console.log("handleUpload called")
@@ -179,14 +154,12 @@ function Postjson() {
       console.log("before cloud post");
 
       fetch("https://api.cloudinary.com/v1_1/quink-post/image/upload", {
-        method: "post",
+        method: "POST",
         body: data,
       })
         .then((res) => res.json())
         .then(async (data) => {
           console.log(data, "this is data from cloudinary");
-          // setimage(data.secure_url);
-          // localStorage.setItem("sjdgsjd", JSON.stringify(data.url));
           setImg(data?.url);
           // const temp = await {
           //   Image: data?.url,
@@ -196,7 +169,7 @@ function Postjson() {
           // var exist = await localStorage.getItem("Values");
 
           // exist = exist ? [...JSON.parse(exist), temp] : [];
-          // console.log(exist, "<<<exist");
+          // console.log(exist, "exist");
           // await localStorage.setItem("Values", JSON.stringify(exist));
           // setPreView(data.url);
         })
@@ -212,7 +185,7 @@ function Postjson() {
   useEffect(() => {
     const temp = localStorage.getItem("Values");
     setDynamicData(JSON.parse(temp));
-    console.log(temp, "<<this is temp");
+    console.log(temp, "this is temp");
   }, [togglePost]);
 
   function getVal(event, id) {
@@ -245,13 +218,14 @@ function Postjson() {
           className=" col-md-12 col-xl-4   d-flex flex-column   align-items-center p-4 border w-md-50 "
           style={{
             margin: "auto",
-            borderRadius: "20px",
-            backgroundColor: "#F8F8FF",
+            borderRadius: "10px",
+            backgroundColor: "#dfe1e6",
+            marginTop: "0",
           }}
         >
           <div className="d-flex justify-content-start w-100">
             <Avatar
-              src={Profile}
+              src={Prof}
               width={50}
               height={50}
               style={{ objectFit: "contain" }}
@@ -261,64 +235,35 @@ function Postjson() {
               type="text"
               value={title}
               placeholder="What's happening?"
-              className="w-100 md:w-100  border p-2"
+              className="w-100 md:w-80  border p-2"
               onChange={(e) => setTitle(e.target.value)}
-              style={{ marginLeft: "20px", borderRadius: "10px" }}
+              style={{ marginLeft: "10px", borderRadius: "10px" }}
             />
           </div>
 
           <div className="d-flex w-100 mt-3 justify-content-end">
             <input
-
               type="file"
               name="img-upload"
               onChange={takeImg}
               // onChange={(e) => handleImage(e.target.files)}
-              value={img}
+              // value={img}
             />
-            <button
+            <Button
               className="p-1"
               style={{
+                // width: "10rem",
                 padding: "0px",
-                borderRadius: "15px",
+                borderRadius: "5px",
                 color: "black",
                 border: "1px solid grey",
               }}
               onClick={storageValues}
             >
               Submit
-            </button>
+            </Button>
           </div>
-
-          {/* <button
-            style={{
-              width: "10rem",
-              padding: "0px",
-              borderRadius: "15px",
-              marginTop: "1rem",
-              backgroundColor: "red",
-              color: "white",
-            }}
-            onClick={storageValues}
-          >
-            Cancel
-          </button> */}
         </div>
-
-        {/* <form action="" onSubmit={storageValues}>
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <input className="abcd" type="file" name="img-upload" 
-                onChange={takeImg} 
-                // onChange={(e) => handleImage(e.target.files)}
-                value={img}/>
-                <br />
-                <input type="submit" name="Submit" style={{backgroundColor: "yellow"}}/>
-              </form> */}
-        {/* {
-                preView && (
-                  <img src={preView} alt="" style={{width: "200px", height: "200px"}} />
-                )
-              } */}
       </div>
       <div
         style={{
@@ -328,94 +273,9 @@ function Postjson() {
         }}
       >
         <>
-          
-        </>
-        <>
           {/* {user2?.map((user) => { */}
           {dynamicData?.map((user, id) => {
             return <PostCard user={user} userName={user2[id]} />;
-            // return (
-            // <Layout className="container1">
-            //   <div className="userPost1">
-            //     <div className="prof1">
-            //       <div className="profile1">
-            //         <Avatar src={Profile} width={50} height={50} />
-            //       </div>
-            //       <div className="userName1">{user.name}</div>
-            //     </div>
-            //     <div className="sts1">
-            //       <div className="created-time1">{user.time}</div>
-            //       <div className="picture1">
-            //         <div className="userStatus1">{user.message}</div>
-            //       </div>
-            //       <Card
-            //         hoverable
-            //         style={{ width: "100%", height: "50vh" }}
-            //         cover={
-            //           <img
-            //             alt="example"
-            //             src="https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp"
-            //           />
-            //         }
-            //       ></Card>
-            //       <div
-            //         style={{
-            //           position: "absolute",
-            //           right: "55vw",
-            //           display: "flex",
-            //           justifyContent: "space-between",
-            //           alignItems: "flex-start",
-            //           left: "-32vw",
-            //           top: "-25vh",
-            //         }}
-            //       >
-            //         <CommentWidgets />
-            //         <div
-            //           style={{
-            //             marginLeft: "30vw",
-            //             display: "flex",
-            //             position: "relative",
-            //             top: "129vh",
-            //           }}
-            //         >
-            //           <Avatar
-            //             className="commentAvatar"
-            //             src={Profile}
-            //             width={10}
-            //             height={10}
-            //             layout="fixed"
-            //             style={{ marginLeft: "20px" }}
-            //           />
-            //           <form
-            //             action=""
-            //             onSubmit={(event) => getVal(event, user.id)}
-            //           >
-            //             <textarea
-            //               name=""
-            //               id=""
-            //               rows={2}
-            //               placeholder="Write a comment here"
-            //               style={{
-            //                 width: "27vw",
-            //                 height: "20px",
-            //                 marginLeft: "10px",
-            //                 boxShadow: "1px 5px 7px -7px rgba(0, 0, 0, 0.75)",
-            //               }}
-            //               onChange={(event) => changeText(event)}
-            //             ></textarea>
-            //             <input type="submit" value="submit" />
-            //           </form>
-            //           <Form.Item>
-            //             <Button htmlType="submit" type="primary">
-            //               Add Comment
-            //             </Button>
-            //           </Form.Item>
-            //         </div>
-            //       </div>
-            //     </div>
-            //   </div>
-            // </Layout>
-            // );
           })}
         </>
         <div
@@ -435,16 +295,14 @@ function Postjson() {
               value={title}
               placeholder="Enter Caption Here"
               onChange={(e) => setTitle(e.target.value)}
-              style={{ width: "80%", borderRadius: "20px" }}
+              style={{ width: "80%", borderRadius: "10px" }}
             />
             <input
-              // className="abcd"
-
               type="file"
               name="img-upload"
               onChange={takeImg}
               // onChange={(e) => handleImage(e.target.files)}
-              value={img}
+              // value={img}
             />
             <button
               style={{
@@ -457,13 +315,13 @@ function Postjson() {
               }}
               onClick={storageValues}
             >
-              Submit
+              Add Post
             </button>
             <button
               style={{
                 width: "10rem",
                 padding: "0px",
-                borderRadius: "15px",
+                borderRadius: "5px",
                 marginTop: "1rem",
                 backgroundColor: "red",
                 color: "white",
@@ -473,21 +331,6 @@ function Postjson() {
               Cancel
             </button>
           </div>
-
-          {/* <form action="" onSubmit={storageValues}>
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <input className="abcd" type="file" name="img-upload" 
-                onChange={takeImg} 
-                // onChange={(e) => handleImage(e.target.files)}
-                value={img}/>
-                <br />
-                <input type="submit" name="Submit" style={{backgroundColor: "yellow"}}/>
-              </form> */}
-          {/* {
-                preView && (
-                  <img src={preView} alt="" style={{width: "200px", height: "200px"}} />
-                )
-              } */}
         </div>
       </div>
     </>

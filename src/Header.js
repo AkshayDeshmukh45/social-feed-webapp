@@ -39,8 +39,8 @@ function Header() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data, "this is data from cloudinary");
-          // setimage(data.secure_url);
-          // localStorage.setItem("img", JSON.stringify(data.url));
+          setImg(data.secure_url);
+          localStorage.setItem("img", JSON.stringify(data.url));
           const temp = { Image: data.url, Title: title };
           localStorage.setItem("Values", JSON.stringify(temp));
           // setPreView(data.url);
@@ -61,7 +61,7 @@ function Header() {
   // }
 
   const takeImg = async (event) => {
-    // const file = event.target.files;
+    const file = event.target.files;
     await handleImage(event.target.files);
   };
 
@@ -76,29 +76,47 @@ function Header() {
       <div className="h-10  border p-4  w-100 d-flex justify-content-around flex-wrap">
         {/* Left Side */}
         <div
-          className="d-flex justify-content-around   md:w-100  flex-wrap"
-          // style={{ marginLeft: "100px" }}
+          className="d-flex justify-content-around  md:w-100  flex-wrap"
+          style={{fontFamily:"Ubuntu", }}
         >
           <div
             className="d-flex"
             style={{ alignSelf: "start", alignContent: "start" }}
           >
-            <HomeOutlined style={{ fontSize: "20px",marginLeft: "20px" }} />
-            <span className="" style={{ color: "blue", fontSize: "15px" }}>
+            <HomeOutlined
+              style={{
+                marginLeft: "10px",
+                fontSize: "20px",
+                marginLeft: "20px",
+              }}
+            />
+            <span
+              className=""
+              style={{ marginLeft: "10px", color: "black", fontSize: "15px" }}
+            >
               {" "}
               Home
             </span>
           </div>
           <div className="d-flex">
-            <NotificationOutlined style={{ fontSize: "20px",marginLeft: "20px" }}  />
-            <span className="" style={{ color: "blue", fontSize: "15px" }}>
+            <NotificationOutlined
+              style={{ fontSize: "20px", marginLeft: "10px" }}
+            />
+            <span
+              className=""
+              style={{ marginLeft: "10px", color: "black", fontSize: "15px" }}
+            >
               {" "}
               Notifications
             </span>
           </div>
           <div className="d-flex">
-            <MessageOutlined style={{ fontSize: "20px",marginLeft: "20px" }} />
-            <span className="" style={{ color: "blue", fontSize: "15px" }}>
+            <MessageOutlined style={{ fontSize: "20px", marginLeft: "10px" }} />
+            <span
+              className=""
+              style={{ marginLeft: "10px", color: "black", fontSize: "15px" }}
+            >
+              {" "}
               Messages
             </span>
           </div>
@@ -106,7 +124,15 @@ function Header() {
 
         <div>
           <img src={Logo} height={30} width={20} />
-          <span>Trip Gyan</span>
+          <span
+            style={{
+              marginLeft: "10px",
+              fontSize: "1.2rem",
+              fontFamily: "monoscope",
+            }}
+          >
+            Trip Gyan
+          </span>
         </div>
         <div>
           <div className="d-flex">
@@ -120,15 +146,26 @@ function Header() {
             <Avatar
               className="rounded"
               src={Profile}
-              width={40}
-              height={40}
-              layout="fixed"
-              style={{ marginLeft: "20px" }}
+              width={100}
+              height={100}
+              style={{ objectFit: "contain", marginLeft: "1.25rem" }}
             />
+            <Button
+              style={{
+                marginLeft: "1.25rem",
+                color: "white",
+                backgroundColor: "red",
+                fontSize: "14px",
+                fontWeight: "bold",
+                borderRadius: "10px",
+              }}
+            >
+              Add Post
+            </Button>
           </div>
+          <div></div>
         </div>
       </div>
-      
     </div>
   );
 }
